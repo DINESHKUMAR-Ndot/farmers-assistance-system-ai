@@ -55,10 +55,10 @@ def create_tables():
 create_tables() #calling the function to create tables
 
 # OpenWeather API Key
-API_KEY = "d82bdf7003adbda2a2ad3ccb47b6728b"  # Replace with your actual API key
+API_KEY = "your_secret_key"  # Replace with your actual API key
 
 # Configure Gemini
-genai.configure(api_key="AIzaSyBFud4mM8DG3pL0qfbK69CZY8SykDQEyK4")  # Use your Gemini API key
+genai.configure(api_key="your_secret_key")  # Use your Gemini API key
 
 # Corrected Model Name - IMPORTANT
 model_name = 'gemini-1.5-pro'  # Or 'gemini-2.5-flash',  or whatever is appropriate as per documentation.  Using 1.5 Pro
@@ -218,3 +218,4 @@ def logout():
 
 if __name__ == '__main__':
     app.run(debug=True)
+

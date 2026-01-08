@@ -1,0 +1,472 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* General body styling */
+body {
+    background-color: #f4f4f9;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Header */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.welcome-text {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Button Container */
+.button-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+/* Signup, Login, and Dashboard Forms */
+.form-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.form-heading {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-field {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.submit-btn {
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}
+
+/* Signup and Login specific */
+/* Signup Page Styles */
+
+.signup-container {
+    max-width: 400px;
+    margin: 60px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.signup-heading {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    color: #2e7d32;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.signup-form .input-field {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.signup-form .submit-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.signup-form .submit-btn:hover {
+    background-color: #388e3c;
+}
+
+.signup-footer {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.signup-footer a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-footer a:hover {
+    text-decoration: underline;
+}
+
+form .form-footer {
+    text-align: center;
+}
+
+form .form-footer a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+form .form-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Dashboard page */
+.dashboard-header {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+/* -------------------- Existing Styles Remain Same -------------------- */
+/* (Retain all previous CSS for buttons, forms, header, etc.) */
+
+/* -------------------- Dashboard-specific Styles -------------------- */
+
+nav {
+    background-color: #388e3c;
+    padding: 10px 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.dashboard-container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+.dashboard-header h2 {
+    font-size: 2rem;
+    color: #2e7d32;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.dashboard-body {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Weather Section */
+.weather-section {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-left: 5px solid #4CAF50;
+    border-radius: 8px;
+}
+
+.weather-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #388e3c;
+}
+
+.weather-section input[type="text"] {
+    padding: 10px;
+    width: 70%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.weather-section button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.weather-section button:hover {
+    background-color: #388e3c;
+}
+
+.weather-info p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+/* Chatbot Section */
+.chatbot-section {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-left: 5px solid #4CAF50;
+    border-radius: 8px;
+}
+
+.chatbot-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #388e3c;
+}
+
+.chatbot-section textarea {
+    width: 100%;
+    padding: 10px;
+    resize: vertical;
+    min-height: 80px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.chatbot-section button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.chatbot-section button:hover {
+    background-color: #388e3c;
+}
+
+.chatbot-response {
+    margin-top: 15px;
+    background-color: #e8f5e9;
+    padding: 10px;
+    border-left: 4px solid #2e7d32;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    margin-top: 40px;
+    font-size: 1rem;
+}
+
+
+.weather-info {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.weather-info h3 {
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.weather-info p {
+    font-size: 1.2rem;
+}
+
+.chat-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chat-container h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.chat-container .chat-box {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.chat-container .user-message,
+.chat-container .assistant-message {
+    margin-bottom: 10px;
+}
+
+.chat-container .user-message {
+    background-color: #dff0d8;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.chat-container .assistant-message {
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.chat-container form input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 80%;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.chat-container form input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.chat-container form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .welcome-text {
+        font-size: 1rem;
+    }
+
+    .btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    .button-container {
+        margin-top: 30px;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    form {
+        width: 90%;
+    }
+
+    .weather-info,
+    .chat-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .chat-container form input[type="text"] {
+        width: 70%;
+    }
+
+    .chat-container form input[type="submit"] {
+        width: 25%;
+    }
+
+    .form-container {
+        width: 90%;
+        margin-top: 20px;
+    }
+}

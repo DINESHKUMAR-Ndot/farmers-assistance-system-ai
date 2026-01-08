@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Farmers Assistance</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        nav {
+            background-color: #388E3C;
+            color: white;
+            padding: 0.5rem 0;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.75rem 1rem;
+            border-radius: 0.3rem;
+            transition: background-color 0.3s ease;
+        }
+        nav ul li a:hover {
+            background-color: #2E7D32;
+        }
+        .dashboard-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            flex-grow: 1;
+        }
+        .dashboard-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .dashboard-header h2 {
+            color: #2E7D32;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        .dashboard-body {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            width: 90%;
+            max-width: 1000px;
+        }
+
+        .weather-section, .chatbot-section {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .weather-section:hover, .chatbot-section:hover {
+            transform: translateY(-0.5rem);
+        }
+
+        .weather-section h3, .chatbot-section h3 {
+            color: #388E3C;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-align: center;
+        }
+        .weather-section form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .weather-section form input {
+            padding: 0.75rem;
+            width: 100%;
+            max-width: 300px;
+            border: 1px solid #D4D4D4;
+            border-radius: 0.3rem;
+            transition: border-color 0.3s ease;
+        }
+        .weather-section form input:focus {
+            outline: none;
+            border-color: #4CAF50;
+            box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+        }
+        .weather-section form button {
+            padding: 0.75rem 1.5rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 0.3rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        .weather-section form button:hover {
+            background-color: #388E3C;
+        }
+        .weather-info {
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: #F0F0F0;
+            border-radius: 0.3rem;
+            border: 1px solid #D4D4D4;
+        }
+        .weather-info p {
+            margin: 0.5rem 0;
+            line-height: 1.6;
+        }
+        .chatbot-section form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+        .chatbot-section form textarea {
+            padding: 0.75rem;
+            width: 100%;
+            max-width: 400px;
+            height: 80px;
+            border: 1px solid #D4D4D4;
+            border-radius: 0.3rem;
+            resize: none;
+            transition: border-color 0.3s ease;
+        }
+        .chatbot-section form textarea:focus {
+            outline: none;
+            border-color: #4CAF50;
+            box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+        }
+        .chatbot-section form button {
+            padding: 0.75rem 1.5rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 0.3rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        .chatbot-section form button:hover {
+            background-color: #388E3C;
+        }
+        .chatbot-response {
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: #E0F7FA;
+            border-radius: 0.3rem;
+            border: 1px solid #B2EBF2;
+            color: #00838F;
+            line-height: 1.6;
+        }
+        .chatbot-response p {
+            margin: 0;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+            border-top: 1px solid #444;
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-body {
+                flex-direction: column;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            nav ul li a {
+                padding: 0.5rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Farmers Assistance</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="#chat">Chat Assistant</a></li> <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="dashboard-container">
+        <div class="dashboard-header">
+            <h2>Welcome, {{ username }}</h2>
+        </div>
+
+        <div class="dashboard-body">
+            <div class="weather-section">
+                <h3>Weather Information</h3>
+                <form method="POST">
+                    <input type="text" name="city" placeholder="Enter city" required>
+                    <button type="submit">Get Weather</button>
+                </form>
+
+                {% if weather %}
+                <div class="weather-info">
+                    <p><strong>City:</strong> {{ weather.city }}, {{ weather.country }}</p>
+                    <p><strong>Temperature:</strong> {{ weather.temperature }}°C</p>
+                    <p><strong>Weather:</strong> {{ weather.weather_description }}</p>
+                    <p><strong>Wind Speed:</strong> {{ weather.wind_speed }} m/s</p>
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="chatbot-section">
+                <h3>Chat with Assistant</h3>
+                <form method="POST">
+                    <textarea name="user_query" placeholder="Ask something..." required></textarea>
+                    <button type="submit">Ask</button>
+                </form>
+            
+                {% if chatbot_response %}
+                <div class="chatbot-response">
+                    <p><strong>Assistant:</strong> {{ chatbot_response }}</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Farmers Assistance. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
